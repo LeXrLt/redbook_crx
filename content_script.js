@@ -12,6 +12,26 @@ function extractAndPrintText() {
   } else {
     console.log("Element with ID 'detail-title' not found.");
   }
+
+  const imgContainers = document.querySelectorAll('div.img-container');
+  if (imgContainers.length === 0) {
+    console.log("No elements with class 'img-container' found.");
+  } else {
+    imgContainers.forEach(containerDiv => {
+      const images = containerDiv.querySelectorAll('img.note-slider-img');
+      if (images.length === 0) {
+        console.log("No images with class 'note-slider-img' found in a 'img-container'.");
+      } else {
+        images.forEach(img => {
+          if (img.src) {
+            console.log("Found image src:", img.src);
+          } else {
+            console.log("Found an image with class 'note-slider-img' but it has no src.");
+          }
+        });
+      }
+    });
+  }
 }
 
 // Call the function to capture static content
