@@ -1,12 +1,17 @@
 function extractAndPrintText() {
-  const elements = document.querySelectorAll('.title, .tag, .note-text');
-  if (elements.length === 0) {
-    console.log("No elements with class 'title', 'tag', or 'note-text' found.");
-    return;
+  const elDesc = document.getElementById('detail-desc');
+  if (elDesc) {
+    console.log("Found text (detail-desc):", elDesc.innerText);
+  } else {
+    console.log("Element with ID 'detail-desc' not found.");
   }
-  elements.forEach(element => {
-    console.log("Found text:", element.innerText);
-  });
+
+  const elTitle = document.getElementById('detail-title');
+  if (elTitle) {
+    console.log("Found text (detail-title):", elTitle.innerText);
+  } else {
+    console.log("Element with ID 'detail-title' not found.");
+  }
 }
 
 // Call the function to capture static content
