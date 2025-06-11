@@ -7,5 +7,11 @@
     "default_popup": "hello.html",
     "default_icon": "hello_extensions.png"
   },
-  "host_permissions": ["*://www.xiaohongshu.com/*"]
+  "host_permissions": ["*://www.xiaohongshu.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["*://www.xiaohongshu.com/*"],
+      "js": ["content_script.js"]
+    }
+  ]
 }
